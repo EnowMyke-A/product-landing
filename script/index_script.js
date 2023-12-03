@@ -1,4 +1,4 @@
-let countDownDate = new Date("Nov 30, 2023 00:00:00").getTime();
+let countDownDate = new Date("Dec 25 2023 00:00:00").getTime();
 var Values = $(".value");
 var i;
 
@@ -23,3 +23,49 @@ var varx = setInterval(function() {
       clearInterval(varx);
     }
 }, 1000);
+
+
+
+
+$(document).ready(function() {
+  const Array = ['./assets/images/products/Digital_Scale/HN289/HN289_black_1.png', './assets/images/products/Digital_Scale/HN289/HN289_pink_1.png', './assets/images/products/Digital_Scale/HN289/HN289_ocean_blue_1.png', 'product-image/Digital_Scale/HN289/HN289_turquoise_1.png']
+  const image = $('.Discount__product__image')[0];
+  $('.color').click(function() {
+    $('.color').removeClass('active__color');
+    $(this).addClass('active__color');
+    image.src = Array[$('.color').index(this)];
+  });
+});
+
+const handleMediaQuery = () => {
+  if ($(window).width() <= 767) {
+    swipe.params.slidesPerView = 1.5;
+    swipe.update();
+  } else {
+    swipe.params.slidesPerView = 3.5; // Set the desired number of slides per view
+    swipe.update();
+  }
+};
+
+
+$(document).ready(function() {
+  const menu= $('.menu__button').eq(0)
+  const mobileMenu = $('.navigation__mobile').eq(0)
+  const mainContainer = $('.index__main__container').eq(0)
+  menu.click(function(){
+    $(this).toggleClass('clicked');
+    mobileMenu.toggleClass('hidden__menu');
+    mainContainer.toggleClass('hide__scroll')
+  })
+  handleMediaQuery();
+});
+
+$(window).resize(function() {
+  handleMediaQuery();
+});
+
+
+
+$(document).ready(function(){
+  
+})
