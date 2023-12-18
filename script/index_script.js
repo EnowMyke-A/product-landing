@@ -1,8 +1,8 @@
-let countDownDate = new Date("Dec 25 2023 00:00:00").getTime();
-var Values = $(".value");
+let countDownDate = new Date('Dec 25 2023 00:00:0').getTime();
+var Values = $('.value');
 var i;
 
-var varx = setInterval(function() {    
+var varx = setInterval(function() {  
     let now = new Date().getTime();
     let distance = countDownDate - now;
   
@@ -52,10 +52,12 @@ $(document).ready(function() {
   const menu= $('.menu__button').eq(0)
   const mobileMenu = $('.navigation__mobile').eq(0)
   const mainContainer = $('.index__main__container').eq(0)
+  const mainBody = $('#main__body');
   menu.click(function(){
     $(this).toggleClass('clicked');
     mobileMenu.toggleClass('hidden__menu');
     mainContainer.toggleClass('hide__scroll');
+    mainBody.toggleClass('hide__scroll');
     $('.user__navigation__container').toggleClass('nav__shadow')
   })
   handleMediaQuery();
@@ -65,8 +67,15 @@ $(window).resize(function() {
   handleMediaQuery();
 });
 
+function OpenSearch(){
+  const SearchContainer = $('.index__main__search__container').eq(0);
+  const SearchInput = $('#main__search');
+  SearchContainer.addClass('searchContainerAnimate');
+  SearchInput.focus();
+}
 
+function CloseSearch(){
+  const SearchContainer = $('.index__main__search__container');
+  SearchContainer.removeClass('searchContainerAnimate');
+}
 
-$(document).ready(function(){
-  
-})
